@@ -13,3 +13,15 @@ export const PostProvider = ({ children }) => {
   );
 
 };
+
+export const useSelector = selecterFn => {
+  const { state } = useContext(PostContext);
+  return selecterFn(state);
+};
+
+
+
+export const useDispatch = () => {
+  const { dispatch } = useContext(PostContext);
+  return dispatch;
+};
