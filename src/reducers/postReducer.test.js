@@ -18,7 +18,7 @@ describe('post reducer functionality', () => {
   it('checks to make sure the user is able to delete a post with DELETE_POST', () => {
 
     const state = {
-      post: [{ post: 'heck yea' }]
+      post: [{ title: 'heck yea' }]
     };
 
     const action = deletePost('heck yea');

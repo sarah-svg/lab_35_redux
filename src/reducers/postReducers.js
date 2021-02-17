@@ -15,7 +15,7 @@ export default function postReducer(state, action) {
     case DELETE_POST:
       return {
         ...state,
-        post: [state.post.legnth - 1]
+        post: state.post.filter(post => post.title !== action.payload)
       };   
     default:
       return state;
