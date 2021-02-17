@@ -1,5 +1,5 @@
 {
-  "name": ".",
+  "name": "lab_35",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-uuid": "^1.0.2"
   }
 }
