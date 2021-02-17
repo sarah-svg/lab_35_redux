@@ -15,7 +15,7 @@ export default function postReducer(state, action) {
     case DELETE_POST:
       return {
         ...state,
-        post: state.dogs.filter(post => post.post !== action.payload)
+        post: [state.post.legnth - 1]
       };   
     default:
       return state;

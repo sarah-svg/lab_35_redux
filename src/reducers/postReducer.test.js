@@ -1,4 +1,4 @@
-import { createPost } from '../actions/postActions';
+import { createPost, deletePost } from '../actions/postActions';
 import postReducer from './postReducers';
 
 /* eslint-disable max-len */
@@ -15,6 +15,19 @@ describe('post reducer functionality', () => {
     expect(newState).toEqual({ post: [{  post: 'hope it works' }] });
   });
 
+  it('checks to make sure the user is able to delete a post with DELETE_POST', () => {
+
+    const state = {
+      post: [{ post: 'heck yea' }]
+    };
+
+    const action = deletePost('heck yea');
+
+    expect(postReducer(state, action)).toEqual({
+      post: []
+    });
+
+  });
 
 
 
