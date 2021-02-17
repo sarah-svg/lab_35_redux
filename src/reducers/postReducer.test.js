@@ -1,0 +1,3 @@
+describe('post reducer functionality', () => {
+
+})
