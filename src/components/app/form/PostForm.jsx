@@ -9,7 +9,7 @@ const PostForm = () => {
   const [title, setTitle] = useState('');
 
   const handleSubmit = event => {
-    event.prevantDefault();
+    event.preventDefault();
 
     dispatch(createPost({ post, title }));
     // dispatch(createTitle({ title }));

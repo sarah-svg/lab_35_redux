@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { useDispatch } from '../../../state/PostProvider';
 import { deletePost } from '../../../actions/postActions';
 
-const Post = ({ post }) => {
+const Post = ({ title, post }) => {
   const dispatch = useDispatch();
-
+  console.log( 'post' , title, post);
   const handleClick = () => {
-    dispatch(deletePost(post));
+    dispatch(deletePost(title));
   };
   return (
     <div>
+      <span>{title}</span>
       <span>Post: {post}</span>
       <button onClick={handleClick}>Delete Post</button> 
     </div>
@@ -18,7 +19,8 @@ const Post = ({ post }) => {
 };
 
 Post.propTypes = {
-  post: PropTypes.array.isRequired,
+  post: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default Post;

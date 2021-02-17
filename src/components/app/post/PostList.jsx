@@ -8,11 +8,13 @@ const PostList = () => {
 
   const posts = useSelector(getPost);
 
-  const postElements = posts.map(post => {
+  const postElements = posts.map(post => (
     <li key={uuid()}>
       <Post {...post}/>
-    </li>;
-  });
+    </li>
+     
+  ));
+
   return (
     <ul>
       {postElements}
