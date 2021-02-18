@@ -5,7 +5,7 @@ import { deletePost } from '../../../actions/postActions';
 
 const Post = ({ title, post }) => {
   const dispatch = useDispatch();
-  console.log( 'post' , title, post);
+  console.log('post', title, post);
   const handleClick = () => {
     dispatch(deletePost(title));
   };
