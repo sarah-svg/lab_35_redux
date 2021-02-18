@@ -5,7 +5,7 @@ export const intialState = {
   post: []
 };
 
-export default function postReducer(state, action) {
+export default function postReducer(state = intialState, action) {
   switch(action.type){
     case CREATE_POST:
       return {
