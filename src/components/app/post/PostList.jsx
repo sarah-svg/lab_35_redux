@@ -1,6 +1,6 @@
 import React from 'react';
 import { getPost } from '../../../selectors/postSelectors';
-import { useSelector } from '../../../state/PostProvider';
+import { useSelector } from 'react-redux';
 import Post from './Post';
 import uuid from 'react-uuid';
 

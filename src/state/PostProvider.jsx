@@ -1,27 +1,27 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import postReducer, { intialState } from '../reducers/postReducers';
+// import React, { createContext, useContext, useReducer } from 'react';
+// import postReducer, { intialState } from '../reducers/postReducers';
 
-const PostContext = createContext(null);
+// const PostContext = createContext(null);
 
-export const PostProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(postReducer, intialState);
+// export const PostProvider = ({ children }) => {
+//   const [state, dispatch] = useReducer(postReducer, intialState);
 
-  return (
-    <PostContext.Provider value={{ state, dispatch }}>
-      {children}
-    </PostContext.Provider>
-  );
+//   return (
+//     <PostContext.Provider value={{ state, dispatch }}>
+//       {children}
+//     </PostContext.Provider>
+//   );
 
-};
+// };
 
-export const useSelector = selecterFn => {
-  const { state } = useContext(PostContext);
-  return selecterFn(state);
-};
+// export const useSelector = selecterFn => {
+//   const { state } = useContext(PostContext);
+//   return selecterFn(state);
+// };
 
 
 
-export const useDispatch = () => {
-  const { dispatch } = useContext(PostContext);
-  return dispatch;
-};
+// export const useDispatch = () => {
+//   const { dispatch } = useContext(PostContext);
+//   return dispatch;
+// };
