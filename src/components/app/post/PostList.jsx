@@ -9,7 +9,7 @@ const PostList = () => {
   const posts = useSelector(getPost);
 
   const postElements = posts.map(post => (
-    <li key={uuid()}>
+    <li key={post.index}>
       <Post {...post}/>
     </li>
      
