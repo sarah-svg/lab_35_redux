@@ -2,7 +2,7 @@
 import { createComment, deleteComment } from '../actions/commentActions';
 import commentReducer from './commentReducer';
 
-describe.skip('comment reducer', () => {
+describe('comment reducer', () => {
   it('checks to make sure the user is able to creat a comment', () => {
     // const state = {};
     const state = {
@@ -14,12 +14,9 @@ describe.skip('comment reducer', () => {
     });
     const newState = commentReducer(state, action);
 
-    expect(newState).toEqual({       comment: [{
-      index: '1',
-      comment: 'really cool comment'
-    }]
+    expect(newState).toEqual({    
    
-    
+      comment: ['really cool comment']
     });
   });
 

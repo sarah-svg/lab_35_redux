@@ -1,25 +1,28 @@
 import React from 'react';
-
-import { useSelector } from 'react-redux';
-import { getComment } from '../../../selectors/commentSelectors';
 import Comment from './comment';
+import PropTypes from 'prop-types';
 
-
-const CommentList = () => {
-
-  const comment = useSelector(getComment);
-
-  const commentElements = comment.map((post, i) => (
-    <li key={i}>
-      <Comment />
-    </li>
-  ));
-
+function CommentList({ comment }) {
   return (
     <ul>
-      {commentElements}
-    </ul>
+      {
+        comment.map((comment, i) => {
 
+          return (
+            <li key={i}>
+              <Comment {...comment}/>
+            </li>
+          );
+        })
+      }
+    </ul>
   );
+}
+
+CommentList.propTypes = {
+  comment: PropTypes.string.isRequired
 };
+
 export default CommentList;
+
+
