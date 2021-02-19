@@ -6,11 +6,11 @@ import { createCommit,
 describe('comment action for creating a commit', () => {
   it('creates a comment', () => {
     const action = createCommit({
-      comment: 'how are you'
+      comment: 'how are you', postIndex: 1
     });
     expect(action).toEqual({
       type: CREATE_COMMENT,
-      payload:{ comment: 'how are you' }
+      payload:{ comment: 'how are you', postIndex: 1 }
     });
   });
 
