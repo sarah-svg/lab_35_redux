@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createCommit } from '../../../actions/commentActions';
+import { createComment } from '../../../actions/commentActions';
 
 
 const CommentForm = () => {
@@ -12,7 +12,7 @@ const CommentForm = () => {
 
   const commentsSubmit = event => {
     event.preventDefault();
-    dispatch(createCommit({ comment, user }));
+    dispatch(createComment({ comment, user }));
   };
 
   return (

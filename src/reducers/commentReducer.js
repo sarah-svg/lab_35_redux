@@ -1,40 +1,44 @@
-import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
+import { CREATE_COMMENT,
+  DELETE_COMMENT,
+  DELETE_POST_COMMENT } from '../actions/commentActions';
 
-// export const intialState = {
-//   comment: []
-// };
+export const intialState = {
+  comment: []
+};
 // comment: [...state.comment, action.payload]
-export default function commentReducer(state = {}, action){
+export default function commentReducer(state = intialState, action){
 
   switch(action.type) {
     case CREATE_COMMENT:
       return {
         ...state, 
-        comment: [action.payload.comment]
+        comment: [...state.comment, action.payload]
       };
   
       
-    case DELETE_COMMENT:
+    case DELETE_COMMENT: {
+      const comment = state
+        .comment
+        .filter(comment => comment.body !== action.payload);
+  
       return {
         ...state,
-        comment: state.comment.filter(comment => comment.user != action.payload)
+        comment
       };
-    default: return  state;
+    }
+    case DELETE_POST_COMMENT: {
+      const comments = state
+        .comments
+        .filter(comment => comment.index !== action.payload);
+
+      return {
+        ...state,
+        comments
+      };
+    }
+    default:
+      return state;
   }
     
 }
-// case CREATE_COMMENT: 
-//   return {
-//     ...state,
-//     [action.payload.postIndex]: [
-//       ...(state[action.payload.postIndex] || []),
-//       action.payload.comment
-//     ]
 
-//     // comment: state.comment.map((comment, i) => {
-//     //   if(action.payload.postIndex > state.comment.length - 1)
-//     //     return [...comment, action.payload.comment];
-//     //   if(i === action.payload.postIndex)
-//     //     return [...comment, action.payload.comment];
-//     // })
-//   };

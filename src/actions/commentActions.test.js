@@ -1,27 +1,27 @@
-import { createCommit,
+import { createComment,
   CREATE_COMMENT, 
   deleteComment, 
   DELETE_COMMENT } from './commentActions';
 
-describe('comment action for creating a commit', () => {
+describe.only('comment action for creating a commit', () => {
   it('creates a comment', () => {
-    const action = createCommit({
-      comment: 'how are you', postIndex: 1
+    const action = createComment({
+      comment: 'how are you'
     });
     expect(action).toEqual({
-      type: CREATE_COMMENT,
-      payload:{ comment: 'how are you', postIndex: 1 }
+      type:CREATE_COMMENT,
+      payload:  'how are you'
     });
   });
 
   it('deletes a comment via the user', () => {
     const action = deleteComment({
-      user: 'Sarah'
+      index : '1'
     });
 
     expect(action).toEqual({
       type: DELETE_COMMENT,
-      payload: { user: 'Sarah' }
+      payload: { index : '1' }
     });
   });
 });

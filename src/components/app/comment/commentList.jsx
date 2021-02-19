@@ -3,9 +3,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getComment } from '../../../selectors/commentSelectors';
 import Comment from './comment';
-import Post from './Post';
 
-const PostList = () => {
+
+const CommentList = () => {
 
   const comment = useSelector(getComment);
 
@@ -22,4 +22,4 @@ const PostList = () => {
 
   );
 };
-export default PostList;
+export default CommentList;

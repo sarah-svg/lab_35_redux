@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { createPost, CREATE_POST, deletePost, DELETE_POST } from './postActions';
 
-describe('post actions for creating a post', () => {
+describe.only('post actions for creating a post', () => {
   it('creates a create post action', () => {
     const action = createPost({
       post:'hey'
@@ -15,12 +15,12 @@ describe('post actions for creating a post', () => {
   
   it('delete a post', () => {
     const action = deletePost({
-      title:'hey'
+      index:1
     });
   
     expect(action).toEqual({
       type: DELETE_POST,
-      payload: { title:'hey' } 
+      payload: { index: 1 } 
     });
   });
 

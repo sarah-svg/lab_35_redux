@@ -1,2 +1,2 @@
-export const getPost = state => state.post;
+export const getPost = state => state.post.post;
 
