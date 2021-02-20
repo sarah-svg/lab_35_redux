@@ -2,15 +2,18 @@ import React from 'react';
 import { getPost } from '../../../selectors/postSelectors';
 import { useSelector } from 'react-redux';
 import Post from './Post';
-import uuid from 'react-uuid';
+import { getComment } from '../../../selectors/commentSelectors';
+// import uuid from 'react-uuid';
 
 const PostList = () => {
 
-  const posts = useSelector(getPost);
+  const post = useSelector(getPost);
+  const comment = useSelector(getComment);
+  console.log('Postlist', comment);
+  const postElements = post.map(post => (
+    <li key={post.index}>
+      <Post {...post} comment= {comment} />
 
-  const postElements = posts.map(post => (
-    <li key={uuid()}>
-      <Post {...post}/>
     </li>
      
   ));

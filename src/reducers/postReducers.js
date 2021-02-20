@@ -1,28 +1,47 @@
 import { CREATE_POST, DELETE_POST } from '../actions/postActions';
+import getIndex from '../utilis/getIndex';
 
 
 export const intialState = {
-  post: []
+  post: {}
 };
 
-export default function postReducer(state = intialState, action) {
+const postReducer = (state = intialState, action) => {
   switch(action.type){
-    case CREATE_POST:
+    case CREATE_POST: {
+      const newIndex = getIndex(state.post);
+      const post = { ...state.post };
+      post[newIndex] = action.payload;
+
       return {
         ...state,
-        post: [...state.post, action.payload]
+        post
       };
-    case DELETE_POST:
+    }
+
+    case DELETE_POST: {
+      const index = action.payload;
+      const post = { ...state.post };
+      delete post[index];
       return {
         ...state,
-        post: state.post.filter(post => post.title !== action.payload)
-      };   
+        post
+      };
+    }
     default:
       return state;
+
   }
     
     
-    
+  //  case CREATE_POST:
+  //   return {
+  //     ...state,
+  //     post: [...state.post, action.payload]
+  //   };
     
 
-}
+};
+
+export default postReducer;
+

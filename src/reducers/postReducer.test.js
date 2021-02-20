@@ -8,23 +8,34 @@ describe('post reducer functionality', () => {
       post: []
     };
     const action = createPost({
-      post: 'hope it works'
+      title: 'Really Cool Post',
+      body: 'Really cool body'
     });
 
     const newState = postReducer(state, action);
-    expect(newState).toEqual({ post: [{  post: 'hope it works' }] });
+    expect(newState).toEqual({    post: {
+      '0': {
+        title: 'Really Cool Post',
+        body: 'Really cool body'
+      }
+    } });
   });
 
   it('checks to make sure the user is able to delete a post with DELETE_POST', () => {
 
     const state = {
-      post: [{ title: 'heck yea' }]
+      post:{ '0': {
+        title: 'life and stuff',
+        body: 'things and stuff about life and stuff'
+      } }
     };
 
-    const action = deletePost('heck yea');
+    const action = deletePost('0');
+    const newState = postReducer(state, action);
+    expect(newState).toEqual({
+      post: {
 
-    expect(postReducer(state, action)).toEqual({
-      post: []
+      }
     });
 
   });
