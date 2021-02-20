@@ -5,12 +5,12 @@ describe('post selector', () => {
     const state = {
       post: {
         post:
-      [{ post: 'hey' }] 
+      [{ post: 'hey', index: 1 }] 
       }
     };
     const post = getPost(state);
 
-    expect(post).toEqual([{ post: 'hey' }]);
+    expect(post).toEqual([{ post: 'hey', index: 1 }]);
   });
 });
 // 

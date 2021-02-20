@@ -8,19 +8,15 @@ import { getComment } from '../../../selectors/commentSelectors';
 const PostList = () => {
 
   const post = useSelector(getPost);
-  const allComments  = useSelector(getComment);
+  const comment = useSelector(getComment);
+  console.log('Postlist', comment);
+  const postElements = post.map(post => (
+    <li key={post.index}>
+      <Post {...post} comment= {comment} />
 
-  const postElements = post.map(post => {
-    const comment = allComments
-      .filter(comment => comment.index === post.index);
-
-    return (
-      <li key={post.index}>
-        <Post {...post} comment={comment} />
-      </li>
-    );
-
-  });
+    </li>
+     
+  ));
 
   return (
     <ul>

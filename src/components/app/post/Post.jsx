@@ -9,7 +9,7 @@ import {  deleteComments } from '../../../actions/commentActions';
 const Post = ({ title, post, index, comment }) => {
   const dispatch = useDispatch();
 
-  console.log('post', title, post);
+  console.log(comment, 'Post');
 
   const handleClick = () => {
     dispatch(deletePost(index));
@@ -32,9 +32,9 @@ Post.propTypes = {
   post: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
-  comment: PropTypes.arrayOf(PropTypes.shape({
+  comment: PropTypes.objectOf(PropTypes.shape({
     index: PropTypes.string.isRequired,
-    comment: PropTypes.string.isRequired
+    comment: PropTypes.object.isRequired
   }))
 };
 

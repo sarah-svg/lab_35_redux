@@ -20,7 +20,11 @@ function CommentList({ comment }) {
 }
 
 CommentList.propTypes = {
-  comment: PropTypes.string.isRequired
+  comment: PropTypes.arrayOf(
+    PropTypes.shape({
+      user: PropTypes.string.isRequired
+    }) 
+  )
 };
 
 export default CommentList;

@@ -6,7 +6,6 @@ import { createComment } from '../../../actions/commentActions';
 const CommentForm = () => {
   const dispatch = useDispatch();
 
-
   const [comment, setComment] = useState('');
   const [user, setUser] = useState('');
 
@@ -34,8 +33,6 @@ const CommentForm = () => {
         <button>Create Comment</button>
       </form>
     </>
-
-  
   );
 };
 export default CommentForm;
