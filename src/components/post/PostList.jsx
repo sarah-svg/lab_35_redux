@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getcomment } from '../../selectors/commentSelectors';
-import { getpost } from '../../selectors/postselectors';
+import { getpost } from '../../selectors/postSelectors';
 
 import Post from './Post';
 
