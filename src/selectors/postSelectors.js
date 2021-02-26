@@ -1,8 +1,7 @@
-// export const getPost = state => state.post.post;
-
-export const getPost = state => {
+export const getpost = state => {
   const post = state.post.post;
   const indices = Object.keys(post);
+
   return indices.map(index => {
     return {
       index, 
@@ -10,4 +9,5 @@ export const getPost = state => {
     };
   });
 };
-export const countPosts = state => getPost(state).length;
+
+export const countpost = state => getpost(state).length;

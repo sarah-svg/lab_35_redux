@@ -1,16 +1,16 @@
 import React from 'react';
-import Comment from './comment';
 import PropTypes from 'prop-types';
+import Comment from './Comments';
 
-function CommentList({ comment }) {
+
+export default function CommentList({ comment }) {
   return (
     <ul>
       {
         comment.map((comment, i) => {
-
           return (
             <li key={i}>
-              <Comment {...comment}/>
+              <Comment {...comment} />
             </li>
           );
         })
@@ -20,13 +20,7 @@ function CommentList({ comment }) {
 }
 
 CommentList.propTypes = {
-  comment: PropTypes.arrayOf(
-    PropTypes.shape({
-      user: PropTypes.string.isRequired
-    }) 
-  )
+  comment: PropTypes.arrayOf(PropTypes.shape({
+    body: PropTypes.string.isRequired
+  }))
 };
-
-export default CommentList;
-
-

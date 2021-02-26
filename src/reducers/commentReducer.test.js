@@ -1,31 +1,45 @@
-/* eslint-disable max-len */
-import { createComment, deleteComment } from '../actions/commentActions';
-import commentReducer from './commentReducer';
+// eslint-disable-next-line max-len
+import { createComment, deleteComment, deletecomment } from '../actions/commentActions';
+import reducer from './commentReducer';
 
 describe('comment reducer', () => {
-  it('checks to make sure the user is able to creat a comment', () => {
-    // const state = {};
+  it('handles the CREATE_COMMENT action', () => {
     const state = {
       comment: []
     };
+
     const action = createComment({
       index: '1',
-      comment: 'really cool comment'
+      body: 'great comment'
     });
-    const newState = commentReducer(state, action);
 
-    expect(newState).toEqual({    
-   
-      comment: ['really cool comment']
-    });
-  });
+    const updatedState = reducer(state, action);
 
-  it('checks to make sure the user is able to delete a commit', () => {
-    const state = {
-      comment: [{ index: 1 }]
-    };
-    const action = deleteComment('Dan');
-    expect(commentReducer(state, action)).toEqual({   comment: [{ index: 1 }] });
+    expect(updatedState)
+      .toEqual({
+        comment: [{
+          index: '1',
+          body: 'great comment'
+        }]
+      });
+
   });
-  
 });
+
+it('deletes a comment', () => {
+  const state = {
+    comment: [{
+      index: '1',
+      body: 'really cool comment'
+    }]
+  };
+
+  const action = deleteComment('really cool comment');
+
+  const updatedState = reducer(state, action);
+
+  expect(updatedState).toEqual({
+    comment: []
+  });
+});
+

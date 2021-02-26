@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { createPost } from '../../../actions/postActions';
+
 import { useDispatch } from 'react-redux';
+import { createPost } from '../../actions/postAction';
 
 const PostForm = () => {
   const dispatch = useDispatch();

@@ -1,45 +1,44 @@
 import { createPost, deletePost } from '../actions/postActions';
-import postReducer from './postReducers';
+import reducer from './postReducer';
 
-/* eslint-disable max-len */
-describe('post reducer functionality', () => {
-  it('checks to make sure the user is able to add a post with CREATE_POST', () => {
+describe('post reducer', () => {
+  it('add a post with CREATE_POST action', () => {
     const state = {
       post: []
     };
+        
     const action = createPost({
-      title: 'Really Cool Post',
-      body: 'Really cool body'
+      title: 'life and stuff',
+      body: 'things and stuff about life and stuff' 
     });
 
-    const newState = postReducer(state, action);
-    expect(newState).toEqual({    post: {
-      '0': {
-        title: 'Really Cool Post',
-        body: 'Really cool body'
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual({
+      post: {
+        '0': {
+          title: 'life and stuff',
+          body: 'things and stuff about life and stuff'
+        }
       }
-    } });
+    });
   });
 
-  it('checks to make sure the user is able to delete a post with DELETE_POST', () => {
-
+  it('handles the DELETE_POST action', () => {
     const state = {
-      post:{ '0': {
-        title: 'life and stuff',
-        body: 'things and stuff about life and stuff'
-      } }
+      post: {
+        '0': {
+          title: 'life and stuff',
+          body: 'things and stuff about life and stuff'
+        }
+      }
     };
 
     const action = deletePost('0');
-    const newState = postReducer(state, action);
+    const newState = reducer(state, action);
+
     expect(newState).toEqual({
-      post: {
-
-      }
+      post: {}
     });
-
   });
-
-
-
 });
