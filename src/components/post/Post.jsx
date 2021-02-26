@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-
 import { deleteComment } from '../../actions/commentActions';
-import CommentForm from '../app/comment/CommentForm';
-
 import { deletePost } from '../../actions/postActions';
-import CommentList from '../app/comment/CommentList';
-
-
+import CommentList from '../comment/CommentList';
+import CommentForm from '../comment/CommentForm';
 
 const Post = ({ index, title, body, comment }) => {
   const dispatch = useDispatch();

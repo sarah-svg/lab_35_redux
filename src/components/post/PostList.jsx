@@ -2,8 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getcomment } from '../../selectors/commentSelectors';
 import { getpost } from '../../selectors/postSelectors';
-
 import Post from './Post';
+
+
 
 const PostList = () => {
   const post = useSelector(getpost);

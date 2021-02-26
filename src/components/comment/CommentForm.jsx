@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { createComment } from '../../../actions/commentActions';
+import { createComment } from '../../actions/commentActions';
+
 
 
 
