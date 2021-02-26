@@ -1,1 +1,4 @@
-export const getComment = (state) => state.comment.comment || [];
+
+
+export const getcomment = state => state.comment.comment;
+

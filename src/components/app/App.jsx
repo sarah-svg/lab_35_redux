@@ -1,12 +1,17 @@
 import React from 'react';
-import PostForm from './form/PostForm';
-import PostList from './post/PostList';
+import PostForm from '../form/PostForm';
+import PostList from '../post/PostList';
 
-export default function App() {
+
+function App() {
+
   return (
+    
     <>
-      <PostForm/>
-      <PostList/>
+      <h1>Blog</h1>
+      <PostForm />
+      <PostList />
     </>
   );
 }
+export default App;

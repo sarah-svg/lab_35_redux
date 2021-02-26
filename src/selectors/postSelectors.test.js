@@ -1,16 +1,24 @@
-import { getPost } from './postSelectors';
+import { getpost } from './postSelectors';
 
-describe('post selector', () => {
-  it('uses the post selector', () => {
+describe('post selectors', () => {
+  it('selects the post from state', () => {
     const state = {
       post: {
-        post:
-      [{ post: 'hey', index: 1 }] 
+        post: {
+          '0': {
+            title: 'life and stuff',
+            body: 'things and stuff about life and stuff'
+          }
+        }
       }
     };
-    const post = getPost(state);
 
-    expect(post).toEqual([{ post: 'hey', index: 1 }]);
+    const post = getpost(state);
+
+    expect(post).toEqual([{
+      index: '0',
+      title: 'life and stuff',
+      body: 'things and stuff about life and stuff'
+    }]);
   });
 });
-// 
