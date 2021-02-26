@@ -8,8 +8,8 @@ describe('post reducer', () => {
     };
         
     const action = createPost({
-      title: 'life and stuff',
-      body: 'things and stuff about life and stuff' 
+      title: 'travel',
+      body: 'Hey how about a roadtrip!' 
     });
 
     const newState = reducer(state, action);
@@ -17,8 +17,8 @@ describe('post reducer', () => {
     expect(newState).toEqual({
       post: {
         '0': {
-          title: 'life and stuff',
-          body: 'things and stuff about life and stuff'
+          title: 'travel',
+          body: 'Hey how about a roadtrip!'
         }
       }
     });
