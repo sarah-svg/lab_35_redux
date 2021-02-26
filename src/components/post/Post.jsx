@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 
 import { deleteComment } from '../../actions/commentActions';
 import CommentForm from '../app/comment/CommentForm';
-import CommentList from '../app/comment/CommentList';
+
 import { deletePost } from '../../actions/postActions';
+import CommentList from '../app/comment/CommentList';
 
 
 
