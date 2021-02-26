@@ -10,7 +10,7 @@ describe('comment reducer', () => {
 
     const action = createComment({
       index: '1',
-      body: 'great comment'
+      body: 'How was you weekend'
     });
 
     const updatedState = reducer(state, action);
@@ -19,7 +19,7 @@ describe('comment reducer', () => {
       .toEqual({
         comment: [{
           index: '1',
-          body: 'great comment'
+          body: 'How was you weekend'
         }]
       });
 
