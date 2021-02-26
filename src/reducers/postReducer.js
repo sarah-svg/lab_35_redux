@@ -1,4 +1,4 @@
-import { CREATE_POST, DELETE_POST } from '../actions/postAction';
+import { CREATE_POST, DELETE_POST } from '../actions/postActions';
 import getIndex from '../utils/getIndex';
 
 export const initialState = {
