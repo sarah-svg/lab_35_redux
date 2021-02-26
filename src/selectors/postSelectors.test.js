@@ -1,4 +1,4 @@
-import { getpost } from './postselectors';
+import { getpost } from './postSelectors';
 
 describe('post selectors', () => {
   it('selects the post from state', () => {
